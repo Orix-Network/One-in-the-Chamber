@@ -1,0 +1,6 @@
+main: cc.orixmc.oitc.Oitc
+version: 1.0
+name: OITC
+commands:
+  oitc:
+    description: View the main plugin command

@@ -4,7 +4,6 @@ import cc.orixmc.oitc.Oitc;
 import cc.orixmc.oitc.profiles.Profile;
 import cc.orixmc.oitc.server.ServerState;
 import io.github.thatkawaiisam.assemble.AssembleAdapter;
-import io.github.thatkawaiisam.assemble.AssembleBoard;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -38,12 +37,12 @@ public class Board implements AssembleAdapter {
         }
         if (Oitc.getInstance().getServerManager().getServerState() == ServerState.STARTING) {
             final List<String> starting = new ArrayList<>();
-            starting.add("Starting in PH");
+            starting.add("Starting in " + Oitc.getInstance().getGameTimer().getLeft());
             return starting;
         }
         if (Oitc.getInstance().getServerManager().getServerState() == ServerState.GAME) {
             final List<String> game = new ArrayList<>();
-            game.add("Time &ePH");
+            game.add("Time &e" + Oitc.getInstance().getGameTimer().getLeft());
             game.add("Kills: &e" + profile.getKills());
             game.add("Deaths: &e" + profile.getDeaths());
             game.add("Kill-Streak: &e" + profile.getKills());
